@@ -1,0 +1,11 @@
+{
+  "name": "ASP.NET",
+  "private": true,
+  "dependencies": {
+    "Font-Awesome": "latest",
+    "bootstrap": "3.0"
+  },
+  "resolutions": {
+    "Font-Awesome": "latest"
+  }
+}

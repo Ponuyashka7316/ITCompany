@@ -1,0 +1,18 @@
+﻿
+html {
+    height: 100%; /* Высота страницы */
+}
+
+body {
+    background-image: url(../images/dark.jpg); /* Путь к фоновому рисунку */
+    background-position: right bottom; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+

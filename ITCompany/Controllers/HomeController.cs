@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ITCompany.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ITCompany.Controllers
 {
@@ -12,6 +13,8 @@ namespace ITCompany.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("Test", "EF");
+            //ViewBag.Type = "EF";
             return View();
         }
 

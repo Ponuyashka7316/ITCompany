@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ITCompany.Models.EmployeeInfo>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.District)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experiance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Base)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BonusAll)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.OnePage)
+    {
+        <tr>
+            <td>
+                @item.EmployeeName
+            </td>
+            <td>
+                @item.Adress
+            </td>
+            <td>
+                @item.District
+            </td>
+            <td>
+                @item.Experiance
+            </td>
+            <td>
+                @item.Year
+            </td>
+            <td>
+                @item.Language
+            </td>
+            <td>
+                @item.Base
+            </td>
+            <td>
+                @item.Comment
+            </td>
+            <td>
+                @item.BonusAll
+            </td>
+            <td>
+                @item.Employee.EmployeeId
+
+            </td>
+            <td>
+                @*@item.Project.Chief
+                @Html.DisplayFor(modelItem => item.Project.Chief)*@
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+            </td>
+        </tr>
+}
+        @Html.PagedListPager((IPagedList)ViewBag.OnePage, page => Url.Action("Index", new { page }))
+    </tbody>
+</table>
+
