@@ -2,15 +2,14 @@
 @using X.PagedList.Mvc.Core;
 @using X.PagedList;
 @{
-    ViewData["Title"] = "GetProjectCost";
-}
 
+}
 
 <link rel="stylesheet" href="~/css/back.css" />
 <p>
     Запрос выполнен за : @ViewBag.time
     <br>
-   Connection type: @ViewBag.Type
+    Connection type: @ViewBag.Type
 </p>
 <table class="table" style="font-size:larger; font-family:Helvetica, sans-serif; font-weight: 500">
     <thead>
@@ -30,7 +29,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Cost)
             </th>
-            
+            <th>
+                @Html.DisplayNameFor(model => model.InnNavigation)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -53,7 +54,9 @@
                 <td>
                     @item.Cost
                 </td>
-               
+                <td>
+                    @item.Inn
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
@@ -62,5 +65,5 @@
             </tr>
         }
     </tbody>
-    @Html.PagedListPager((IPagedList)ViewBag.OnePage, page => Url.Action("GetProjectCost", new { page }))
+    @Html.PagedListPager((IPagedList)ViewBag.OnePage, page => Url.Action("GetFinishingProjects", new { page }))
 </table>

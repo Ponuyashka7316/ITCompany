@@ -21,7 +21,7 @@
 
     </environment>
 </head>
-<body>
+<body link="#ffffff">
     <div class="menu">
 
         <!-- Иконка меню -->
@@ -30,17 +30,72 @@
         </div>
 
         <!-- Меню -->
-        
-        <ul class="hov">
+        <div style=" width:30%; height:1px; clear:both;">
+            <ul class="hov list-group">
 
-            <a href="@Url.Action("GetProjectCost", "Queries" )"> <li>Get projects costs (EF)</li></a>
+                <a href="@Url.Action("GetProjectCost", "Queries" )">
+                    <li>Get projects costs (EF)</li>
+                </a>
 
-            <a href="@Url.Action("GetProjectCostADO", "Queries" )"> <li>Get projects costs (ADO)</li></a>
-            <a href="@Url.Action("GetProjectCostPLINQ", "Queries" )"> <li>Get projects costs (PLINQ)</li></a>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+                <a href="@Url.Action("GetProjectCostADO", "Queries" )">
+                    <li>Get projects costs (ADO)</li>
+                </a>
+
+                <a href="@Url.Action("GetProjectCostPLINQ", "Queries" )"> <li>Get projects costs (PLINQ)</li></a>
+                </table>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div style="margin-left:30%; width:30%; height:1px; clear:both;">
+            <ul class="hov list-group">
+
+                <a href="@Url.Action("GetFinishingProjects", "Queries" )">
+                    <li>Get finishing projects (EF)</li>
+                </a>
+                <a href="@Url.Action("GetFinishedProjectsADO", "Queries" )">
+                    <li>Get finishing projects (ADO)</li>
+                </a>
+                <a href="@Url.Action("GetFinishedProjectsPLINQ", "Queries" )">
+                    <li>Get finishing projects (PLINQ)</li>
+                </a>
+                </table>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div style="margin-left:60%; width:30%; height:1px; clear:both;">
+            <ul class="hov list-group">
+
+                <a href="@Url.Action("GetEmployeesWithProjects", "Queries" )">
+                    <li>Get Employees With Projects (EF)</li>
+                </a>
+                <a href="@Url.Action("GetEmployeesWithProjectsADO", "Queries" )">
+                    <li>Get Employees With Projects (ADO)</li>
+                </a>
+                </table>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        @*<div id="liniya">
+            <ul class="hov list-group">
+
+                <a href="@Url.Action("GetFinishingProjects", "Queries" )">
+                    <li>Get finishing projects (EF)</li>
+                </a>
+                <a href="@Url.Action("GetFinishedProjectsADO", "Queries" )">
+                    <li>Get finishing projects (ADO)</li>
+                </a>
+                <a href="@Url.Action("GetFinishedProjectsPLINQ", "Queries" )">
+                    <li>Get finishing projects (PLINQ)</li>
+                </a>
+            </ul>
+        </div>*@
+
+
     </div>
+    
     @*<script type="text/javascript">
             $(document).ready(function () {
                @HttpContext.Session.SetString("Test", list.options[list.selectedIndex].innerHTML);

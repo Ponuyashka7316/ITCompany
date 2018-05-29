@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ITCompany.Models.ProjectInfo>
+    @using X.PagedList.Mvc.Core;
+    @using X.PagedList;
+    @{
+        
+    }
+
+    <link rel="stylesheet" href="~/css/back.css" />
+    <p>
+        Запрос выполнен за : @ViewBag.time
+        <br>
+        Connection type: @ViewBag.Type
+    </p>
+    <table class="table" style="font-size:larger; font-family:Helvetica, sans-serif; font-weight: 500">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectStart)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectStop)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Chief)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InnNavigation)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.OnePage)
+            {
+                <tr>
+                    <td>
+                        @item.ProjectName
+                    </td>
+                    <td>
+                        @item.ProjectStart.ToString("dd/M/yyyy")
+                    </td>
+                    <td>
+                        @item.ProjectStop.ToString("dd/M/yyyy")
+                    </td>
+                    <td>
+                        @item.Chief
+                    </td>
+                    <td>
+                        @item.Cost
+                    </td>
+                    <td>
+                        @item.Inn
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        @Html.PagedListPager((IPagedList)ViewBag.OnePage, page => Url.Action("GetFinishedProjectsADO", new { page }))
+    </table>
