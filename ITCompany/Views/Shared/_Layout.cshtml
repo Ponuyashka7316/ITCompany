@@ -30,7 +30,7 @@
         </div>
 
         <!-- Меню -->
-        <div style=" width:30%; height:1px; clear:both;">
+        <div class="menu" style=" width:30%; height:1px; clear:both;">
             <ul class="hov list-group">
 
                 <a href="@Url.Action("GetProjectCost", "Queries" )">
@@ -41,9 +41,10 @@
                     <li>Get projects costs (ADO)</li>
                 </a>
 
-                <a href="@Url.Action("GetProjectCostPLINQ", "Queries" )"> <li>Get projects costs (PLINQ)</li></a>
+                <a href="@Url.Action("GetProjectCostPLINQ", "Queries" )"> <li>
+                    Get projects costs (PLINQ)</li></a>
                 </table>
-                <li><a href="#">Help</a></li>
+                
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
@@ -60,7 +61,7 @@
                     <li>Get finishing projects (PLINQ)</li>
                 </a>
                 </table>
-                <li><a href="#">Help</a></li>
+                
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
@@ -73,8 +74,11 @@
                 <a href="@Url.Action("GetEmployeesWithProjectsADO", "Queries" )">
                     <li>Get Employees With Projects (ADO)</li>
                 </a>
+                <a href="@Url.Action("GetEmployeesWithProjectsLINQ", "Queries" )">
+                    <li>Get Employees With Projects (ADO)</li>
+                </a>
                 </table>
-                <li><a href="#">Help</a></li>
+
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>

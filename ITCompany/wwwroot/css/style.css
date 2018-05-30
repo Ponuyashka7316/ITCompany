@@ -14,10 +14,10 @@ body {
 
 .menu {
     background: #555 url('../images/pc.jpg') repeat left top;
-    left: -350px; /* прячем меню */
+    left: -1000px; /* прячем меню */
     height: 100%;
     position: fixed;
-    width: 350px;
+    width: 1000px;
 }
 
 
